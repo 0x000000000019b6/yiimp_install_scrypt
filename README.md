@@ -1,3 +1,15 @@
+# Yiimp Bug FIX:
+
+CDbConnection failed to open the DB connection:
+```bash
+sudo apt install php7.3-memcache php7.3-memcached memcached
+```
+```bash
+sudo update-alternatives --set php /usr/bin/php7.3
+```
+```bash
+sudo service nginx restart && sudo service php7.3-fpm restart
+```
 # Yiimp_install_scrypt v0.2 (update Avril, 2020)
 
 Site : https://www.xavatar.com
