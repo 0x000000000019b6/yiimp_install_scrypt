@@ -330,6 +330,7 @@
     sudo ufw allow 8463/tcp
     sudo ufw allow 8433/tcp
     sudo ufw allow 8533/tcp
+    sudo ufw allow 9767/tcp
     sudo ufw --force enable
     sleep 5
     sudo systemctl status ufw | sed -n "1,3p"   
