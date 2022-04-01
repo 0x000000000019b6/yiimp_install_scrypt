@@ -976,7 +976,16 @@
     sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2018-02-coins_getinfo.sql
     echo -e "$GREEN Done...$COL_RESET"
-        
+    
+    # Remove coins from db
+    echo
+    echo
+    echo -e "$CYAN => Remove coins from db $COL_RESET"
+    echo
+    sleep 1
+    
+    sudo chmod +x utils/delcoin.sh
+    ./utils/delcoin.sh
     
     # Generating a basic Yiimp serverconfig.php
     echo
