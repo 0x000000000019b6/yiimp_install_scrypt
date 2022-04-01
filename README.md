@@ -37,29 +37,35 @@ apt upgrade
 ```bash
 reboot
 ```
+- Create user (pool it's just an example...)
 ```bash
-adduser pool (pool it's just an example...)
+adduser pool
 ```
+- Add user sudo privileges
 ```bash
 adduser pool sudo
 ```
+- Switch to 'pool' user
 ```bash
 su - pool
 ```
+- Install git
 ```bash
 - sudo apt -y install git
 ```
+- Clone yiimp_install_scrypt
 ```bash
 git clone https://github.com/0x000000000019b6/yiimp_install_scrypt.git
 ```
+- Navigate to git...
 ```bash
 cd yiimp_install_scrypt/
 ```
-NOTE: (DO NOT RUN THE SCRIPT AS ROOT or SUDO)
+- Run install.sh... NOTE: (DO NOT RUN THE SCRIPT AS ROOT or SUDO)
 ```bash
 bash install.sh
 ```
-At the end, you MUST REBOOT to finalize installation...
+- At the end, you MUST REBOOT to finalize installation...
 ```bash
 sudo reboot
 ```
