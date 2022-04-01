@@ -12,9 +12,7 @@ sudo service nginx restart && sudo service php7.3-fpm restart
 ```
 # Yiimp_install_scrypt v0.2 (update Avril, 2020)
 
-Site : https://www.xavatar.com
-
-Discord : https://discord.gg/zcCXjkQ
+Forked from : https://github.com/xavatar/yiimp_install_scrypt:
 
 TUTO Youtube (16.04 / 18.04 - Without SSL) : https://www.youtube.com/watch?v=qE0rhfJ1g2k
 
@@ -30,17 +28,42 @@ Original Yiimp Installer : https://github.com/cryptopool-builders/multipool_orig
 USE THIS SCRIPT ON FRESH INSTALL UBUNTU Server 16.04 / 18.04 !
 
 Connect on your VPS =>
-- apt update
-- apt upgrade
-- reboot
-- adduser pool (pool it's just an example...)
-- adduser pool sudo
-- su - pool
+```bash
+apt update
+```
+```bash
+apt upgrade
+```
+```bash
+reboot
+```
+```bash
+adduser pool (pool it's just an example...)
+```
+```bash
+adduser pool sudo
+```
+```bash
+su - pool
+```
+```bash
 - sudo apt -y install git
-- git clone https://github.com/xavatar/yiimp_install_scrypt.git
-- cd yiimp_install_scrypt/
-- bash install.sh (DO NOT RUN THE SCRIPT AS ROOT or SUDO)
-- At the end, you MUST REBOOT to finalize installation...
+```
+```bash
+git clone https://github.com/0x000000000019b6/yiimp_install_scrypt.git
+```
+```bash
+cd yiimp_install_scrypt/
+```
+NOTE: (DO NOT RUN THE SCRIPT AS ROOT or SUDO)
+```bash
+bash install.sh
+```
+At the end, you MUST REBOOT to finalize installation...
+```bash
+sudo reboot
+```
+
 
 Finish !
 - Go http://xxx.xxx.xxx.xxx or https://xxx.xxx.xxx.xxx (if you have chosen LetsEncrypt SSL). Enjoy !
