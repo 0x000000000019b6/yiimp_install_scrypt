@@ -986,9 +986,10 @@
     echo -e "$CYAN => Remove coins from db $COL_RESET"
     echo
     sleep 1
-    
-    cd ~/yiimp_install_scrypt/utils
+   
+    sudo chmod +x /bin/yiimp
     sudo chmod +x delcoin.sh
+    cd ~/yiimp_install_scrypt/utils
     ./delcoin.sh
     cd ~
     
