@@ -185,6 +185,7 @@
     libpsl-dev libnghttp2-dev
     fi
     sleep 5
+    sudo update-alternatives --set php /usr/bin/php7.3
     sudo systemctl start php7.3-fpm
     sudo systemctl status php7.3-fpm | sed -n "1,3p"
     sleep 15
