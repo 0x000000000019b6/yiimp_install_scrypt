@@ -173,15 +173,17 @@
     if [[ ("$DISTRO" == "16") ]]; then
     apt_install php7.3-fpm php7.3-opcache php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-imap php7.3-cli \
     php7.3-cgi php-pear php-auth imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
-    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring
+    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl php7.3-memcache php7.3-memcached memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring
     #hide_output sudo phpenmod mcrypt
     #hide_output sudo phpenmod mbstring
     else
     apt_install php7.3-fpm php7.3-opcache php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-imap php7.3-cli \
     php7.3-cgi php-pear imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
-    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring \
+    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl php7.3-memcache php7.3-memcached memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring \
     libpsl-dev libnghttp2-dev
     fi
+    sleep 1
+    sudo update-alternatives --set php /usr/bin/php7.3
     sleep 5
     hide_output sudo systemctl start php7.3-fpm
     sudo systemctl status php7.3-fpm | sed -n "1,3p"
@@ -327,6 +329,7 @@
     hide_output sudo ufw allow 8463/tcp
     hide_output sudo ufw allow 8433/tcp
     hide_output sudo ufw allow 8533/tcp
+    hide_output sudo ufw allow 9767/tcp
     hide_output sudo ufw --force enable
     sleep 5
     sudo systemctl status ufw | sed -n "1,3p"   
