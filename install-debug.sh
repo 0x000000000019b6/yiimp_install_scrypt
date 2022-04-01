@@ -175,15 +175,17 @@
     if [[ ("$DISTRO" == "16") ]]; then
     sudo apt -y install php7.3-fpm php7.3-opcache php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-imap php7.3-cli \
     php7.3-cgi php-pear php-auth imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
-    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring
+    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl php7.3-memcache php7.3-memcached memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring
     #sudo phpenmod mcrypt
     #sudo phpenmod mbstring
     else
     sudo apt -y install php7.3-fpm php7.3-opcache php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-imap php7.3-cli \
     php7.3-cgi php-pear imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
-    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring \
+    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl php7.3-memcache php7.3-memcached memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring \
     libpsl-dev libnghttp2-dev
     fi
+    sleep 1
+    sudo update-alternatives --set php /usr/bin/php7.3
     sleep 5
     sudo systemctl start php7.3-fpm
     sudo systemctl status php7.3-fpm | sed -n "1,3p"
@@ -977,7 +979,17 @@
     sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2018-02-coins_getinfo.sql
     echo -e "$GREEN Done...$COL_RESET"
-        
+   
+    # Remove coins from db
+    echo
+    echo
+    echo -e "$CYAN => Remove coins from db $COL_RESET"
+    echo
+    sleep 1
+    
+    sudo chmod +x utils/delcoin.sh
+    ./utils/delcoin.sh
+
     
     # Generating a basic Yiimp serverconfig.php
     echo
