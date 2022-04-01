@@ -989,9 +989,12 @@
    
     sudo chmod +x /bin/yiimp
     cd ~/yiimp_install_scrypt/utils
+    sudo chmod +x screen-stratum.sh
     sudo chmod +x delcoin.sh
     ./delcoin.sh
     cd ~
+    
+    chmod chmod +x /var/stratum/run.sh
     
     # Generating a basic Yiimp serverconfig.php
     echo
