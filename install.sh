@@ -984,8 +984,10 @@
     echo
     sleep 1
     
-    sudo chmod +x utils/delcoin.sh
-    ./utils/delcoin.sh
+    cd ~/yiimp_install_scrypt/utils
+    sudo chmod +x delcoin.sh
+    ./delcoin.sh
+    cd ~
     
     # Generating a basic Yiimp serverconfig.php
     echo
