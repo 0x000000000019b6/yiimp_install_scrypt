@@ -985,8 +985,8 @@
     sleep 1
    
     sudo chmod +x /bin/yiimp
-    sudo chmod +x delcoin.sh
     cd ~/yiimp_install_scrypt/utils
+    sudo chmod +x delcoin.sh
     ./delcoin.sh
     cd ~
     
