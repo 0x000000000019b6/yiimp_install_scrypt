@@ -10,6 +10,9 @@ sudo update-alternatives --set php /usr/bin/php7.3
 ```bash
 sudo service nginx restart && sudo service php7.3-fpm restart
 ```
+```bash
+chmod +x /var/stratum/run.sh
+```
 # Yiimp_install_scrypt v0.2 (update Avril, 2020)
 
 Forked from : https://github.com/xavatar/yiimp_install_scrypt:
