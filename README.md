@@ -72,6 +72,12 @@ bash install.sh
 ```bash
 sudo reboot
 ```
+```bash
+cd utils/
+```
+```bash
+./screen-stratum.sh
+```
 
 
 Finish !
